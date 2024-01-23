@@ -65,7 +65,7 @@ body {
     height: 100vh;
     font-family: 'Raleway', sans-serif;
     font-weight: bold;
-    overflow: hidden;
+    overflow: auto;
 }
 h1 {
   font-family: system-ui, sans-serif;
@@ -245,5 +245,26 @@ h2{
     }
     50% {
       opacity: 0;
+    }
+  }
+  @media (max-width: 1200px) {
+    .btn-matrix {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+  }
+  
+  @media (max-width: 850px) {
+    .btn-matrix {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+  }
+  
+  @media (max-width: 540px) {
+    .btn-matrix {
+      grid-template-columns: repeat(1, 1fr);
+      margin-top: 20px;
+      text-align: center;
     }
   }

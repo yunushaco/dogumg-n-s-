@@ -188,8 +188,23 @@ main {
 .melisa{
   grid-row:span 2;
 }
+.melisaa{
+  grid-row:span 3;
+}
 .luna{
   grid-row:span 1;
+}
+.kafe{
+  grid-row: span 3;
+}
+.esma{
+  grid-row:span 2;
+}
+.hasan{
+  grid-row:span 2;
+}
+.nazmiye{
+  grid-row: span 2;
 }
 .short {
   grid-row: span 1;

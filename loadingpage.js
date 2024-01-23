@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const textContainer = document.getElementById("text-container");
     const sentences = [
-        "Kimlik Doğrulama İşlemi Başarıyla Gerçekleşmiştir!!",
         "AHHH UZUN ZAMANDIR SENİ BEKLİYORDUM !! Hoş Geldin Esma.",
-        "Ben senin için tasarlanmış bir yapay zeka aracıyım.İsmim 4 yapraklı yonca “🍀”",
+        "Ben senin için tasarlanmış bir yapay zeka aracıyım. İsmim 4 yapraklı yonca “🍀”",
+        "Sevdiklerinden mesajlar ve fotoğraflar var bir kaç kişi daha mesaj ekleyecek lütfen beklemede kal...",
         "Size özel oluşturduğum sayfaya yönlendirmenizi gerçekleştiriyorum...",
-        "Sık sık uğramanız dileklerim ile Hoş Kalın 👋",
         "---"
     ];
 
@@ -19,18 +18,22 @@ function writeAndDelete(sentences, element, index) {
 
     // Yazma işlemi
     typeWriter(element, currentSentence, 0, function () {
-        // Yazma tamamlandığında silme işlemi
-        setTimeout(function () {
-            deleteText(element, currentSentence.length, function () {
-                // Silme tamamlandığında bir sonraki cümleye geç
-                index = (index + 1) % sentences.length;
+        // Yazma tamamlandığında sesi durdur
+        document.getElementById("typeSound").pause();
 
-                // Check if the current sentence is "---" for redirection
+        // Yazma işlemi tamamlandığında silme işlemine başla
+        setTimeout(function () {
+            document.getElementById("deleteSound").play(); // Silme sesini çal
+            deleteText(element, currentSentence.length, function () {
+                // Silme tamamlandığında sesi durdur
+                document.getElementById("deleteSound").pause();
+
+                // Bir sonraki cümleye geç veya yönlendirme yap
+                index = (index + 1) % sentences.length;
                 if (currentSentence.trim() === "---") {
-                    // Redirect to a different page
-                    window.location.href = "dg.html";
+                    window.location.href = "dg.html"; // Yönlendirme yap
                 } else {
-                    // Continue with the next sentence
+                    // Devam et
                     writeAndDelete(sentences, element, index);
                 }
             });
@@ -42,11 +45,16 @@ function typeWriter(element, text, index, callback) {
     if (index < text.length) {
         element.innerHTML += text.charAt(index);
         index++;
+
+        // Yazma işlemi sırasında sesi çal
+        document.getElementById("typeSound").play();
+
         setTimeout(function () {
             typeWriter(element, text, index, callback);
         }, 40); // Yazı hızını buradan ayarlayabilirsiniz
     } else {
-        // Yazı tamamlandığında callback fonksiyonunu çağır
+        // Yazı tamamlandığında sesi durdur
+        document.getElementById("typeSound").pause();
         callback();
     }
 }
@@ -56,9 +64,14 @@ function deleteText(element, length, callback) {
         if (length > 0) {
             element.innerText = element.innerText.slice(0, -1);
             length--;
+
+            // Silme işlemi sırasında sesi çal
+            document.getElementById("deleteSound").play();
+
             deleteText(element, length, callback);
         } else {
-            // Silme tamamlandığında callback fonksiyonunu çağır
+            // Silme tamamlandığında sesi durdur
+            document.getElementById("deleteSound").pause();
             callback();
         }
     }, 30); // Silme hızını buradan ayarlayabilirsiniz

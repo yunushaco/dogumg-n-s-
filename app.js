@@ -77,17 +77,22 @@ function appendToCommand(button, letters) {
 
 function handleCommand() {
   var messageElement = document.getElementById("message");
+  var successAudio = document.getElementById("successAudio");
+  var errorAudio = document.getElementById("errorAudio");
 
-  if (currentCommand === "AH01B00E") {
+  if (currentCommand === "BH0AB00E") {
     messageElement.innerText = "Başarılı giriş! Yönlendiriliyor...";
     // Burada istediğiniz sayfaya yönlendirme işlemini gerçekleştirebilirsiniz.
     messageElement.style.color = "white";
     setTimeout(function () {
         redirectToNewPage();
-      }, 2000);
+        
+      }, 4000);
+      successAudio.play();
   } else {
     messageElement.innerText = "Hatalı şifre! Lütfen tekrar deneyin.";
     messageElement.style.color = "white";
+    errorAudio.play();
   }
 
   // Şifreyi temizle
