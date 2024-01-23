@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Özel Terminal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sayfa">
+<div class="sayac"> 
+    <div class="yazilar">
+        <h1>Dünyaya düşen  <span>(E)Nur</span> parçası</h1>
+        <h2>Kimliğinizi doğrulamamız için lütfen doğru tuşlamaları yapınız!</h2>
+    </div>
+    <div class="countdown" data-target-date="2024-01-28 00:00:00"></div>
+</div>
+<div class="terminal" id="terminal">
+
+    <div class="terminal-border" id="terminal">
+        <div class="btn-matrix">
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'SE')">SE</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'YU')">YU</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'C1')">C1</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'AH')">AH</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'E4')">E4</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'F7')">F7</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'B0')">B0</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'H9')">H9</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, '01')">01</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'J6')">J6</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, 'K3')">K3</button> </a>
+            <a href="#"onclick="event.preventDefault();"><span></span><span></span><span></span><span></span> <button class="btn" onclick="appendToCommand(this, '0E')">0E</button> </a>
+        </div>
+      </div>
+     <button class="btn" id="btn1" onclick="handleCommand()">Giriş</button>
+    <p id="message"></p>
+  </div>
+  <div id="newContent" style="display: none;">
+    <!-- Yeni içerik buraya eklenecek -->
+    <h1>Yeni İçerik</h1>
+    <p>Hoş geldiniz! Yeni içeriği buraya ekleyebilirsiniz.</p>
+  </div>
+</div>
+  <script src="app.js"></script>
+  <audio id="clickSound" src="butonses.mp3"></audio>
+  <audio id="backgroundMusic" src="arkaplanmusic.mp3" loop ></audio>
+
+
+</body>
+</html>

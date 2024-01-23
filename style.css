@@ -1,0 +1,249 @@
+.countdown{
+  --number-color: hsl(0 0% 100%);
+  --text-color: hsl(0 0% 25%);
+  --dot-color: hsl(0 0% 10%);
+  --dot-color-remaining: hsl(288, 85%, 33%);
+  --dot-color-active: hsl(0 0% 100%);
+  font-family: system-ui, sans-serif;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  width: min(60rem, 100%);
+  margin-inline: auto;
+  container: inline-size;
+  > .part {
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    > .remaining {
+      grid-area: 1/1;
+      color: hsl(0 0% 100%);
+      display: grid;
+      text-align: center;
+      font-size: 4cqi;
+      >.number {
+        color: var(--number-color);
+      }
+      >.text {
+        color: var(--text-color);
+        text-transform: uppercase;
+        font-size: 0.5em;
+      }
+    }
+    > .dot-container {
+      grid-area: 1/1;
+      height: 100%;
+      width: 4%;
+      rotate: calc(360deg / var(--dots) * var(--dot-idx));
+      > .dot {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background-color: var(--dot-color);
+        border-radius: 50%;
+        transition: background-color .25s;
+        &[data-active=true]{
+          background-color: var(--dot-color-remaining);
+          &[data-lastactive=true]{
+            background-color: var(--dot-color-active);
+          }
+        }
+      }
+    }
+  }
+}
+
+* { box-sizing: border-box }
+html, body { height: 100% }
+body {
+  margin: 0;
+  padding: 2rem;
+  background-color: hsl(0, 3%, 6%);
+  display: grid;
+  gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    overflow: hidden;
+}
+h1 {
+  font-family: system-ui, sans-serif;
+  color: hsl(0 0% 100%);
+  text-align: center;
+  >span:last-of-type{
+    color: hsl(288, 85%, 33%)
+  }
+}
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    position: relative;
+    display: inline-block;
+    padding: 25px 30px;
+    margin: 40px 0;
+    color: #6a098d;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+    margin-right: 50px;
+   
+}
+a:hover{
+    background: #6a098d;
+    color: #6a098d;
+    box-shadow: 0 0 5px #6a098d,
+                0 0 25px #6a098d,
+                0 0 50px #6a098d,
+                0 0 200px #6a098d;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+}
+a span{
+    position: absolute;
+    display: block;
+}
+a span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg,transparent,#6a098d);
+    animation: animate1 1s linear infinite;
+}
+@keyframes animate1{
+    0%{
+        left: -100%;
+    }
+    50%,100%{
+        left: 100%;
+    }
+}
+a span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,#6a098d);
+    animation: animate2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+@keyframes animate2{
+    0%{
+        top: -100%;
+    }
+    50%,100%{
+        top: 100%;
+    }
+}
+a span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg,transparent,#6a098d);
+    animation: animate3 1s linear infinite;
+    animation-delay: 0.50s;
+}
+@keyframes animate3{
+    0%{
+        right: -100%;
+    }
+    50%,100%{
+        right: 100%;
+    }
+}
+
+
+a span:nth-child(4){
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,#6a098d);
+    animation: animate4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+@keyframes animate4{
+    0%{
+        bottom: -100%;
+    }
+    50%,100%{
+        bottom: 100%;
+    }
+}
+.btn-matrix {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Buton sütun sayısını 6 olarak değiştirdik */
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+.btn {
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 22px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    width: 100%;
+    text-align: center;
+    width: auto;
+  }
+#btn1{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.btn.clicked {
+  background-color: #55146c; /* Tıklandığında rengi değiştir */
+  color: #ffffffc3; /* Tıklandığında metin rengini değiştir */
+  transform: scale(2.2); /* Tıklandığında küçültme animasyonu ekledik */
+  border-radius: 0%;
+  text-align: center;
+
+}
+h2{
+    color: white;
+    text-align: center;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    font-size: 15px;
+    
+}
+.Sayfa{
+
+    grid-template-columns: 1fr 1fr;
+}
+.terminal.flicker-effect {
+    animation: flicker-animation 0.1s infinite alternate;
+  }
+  
+  @keyframes flicker-animation {
+    0%, 100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+    50% {
+      opacity: 0.8;
+      transform: translate(2px, 2px);
+    }
+  }
+  .fade-in-out {
+    animation: fade-in-out-animation 0.1s ease-in-out;
+  }
+
+  @keyframes fade-in-out-animation {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
