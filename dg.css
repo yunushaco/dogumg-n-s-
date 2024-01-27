@@ -38,6 +38,8 @@ img {
     border: 1px solid rgba(255, 255, 255, 0.8);
     margin: 30px 0;
     padding: 16px 30px;
+    margin-left: auto; /* Soldan otomatik ortalama */
+    margin-right: auto; 
   }
   header h1 {
     margin: 10px 0 16px;
@@ -200,10 +202,10 @@ main {
 .esma{
   grid-row:span 2;
 }
-.hasan{
+.ece{
   grid-row:span 2;
 }
-.nazmiye{
+.sude{
   grid-row: span 2;
 }
 .short {
@@ -324,4 +326,21 @@ main {
     max-width: 400px;
     margin-top: 20px;
   }
+}
+
+#galleryButton {
+  display: block;
+  margin: 20px auto; /* Butonun üst ve alt boşlukları artırıldı */
+  padding: 10px 20px; /* Butonun iç boşlukları artırıldı */
+  text-align: center;
+  background-color: #a34caf; /* Arkaplan rengi */
+  color: white; /* Yazı rengi */
+  border: none;
+  border-radius: 5px; /* Kenar yuvarlaklığı */
+  cursor: pointer; /* İmleci bir el işareti olarak göster */
+  transition: background-color 0.3s; /* Arka plan renginde yumuşak bir geçiş */
+}
+
+#galleryButton:hover {
+  background-color: #9545a0; /* Butonun üzerine gelindiğinde arka plan rengi değişir */
 }

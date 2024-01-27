@@ -24,3 +24,10 @@ audio.addEventListener("ended", function () {
 });
 
 playPauseButton.addEventListener("click", togglePlayPause);
+
+
+
+document.getElementById("galleryButton").addEventListener("click", function() {
+  // Butona tıklandığında başka bir sayfaya yönlendirme
+  window.location.href = "slider.html"; // Galeri sayfasının yolunu belirtin
+});

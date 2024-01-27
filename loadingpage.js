@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const textContainer = document.getElementById("text-container");
     const sentences = [
-        "AHHH UZUN ZAMANDIR SENİ BEKLİYORDUM !! Hoş Geldin Esma.",
-        "Ben senin için tasarlanmış bir yapay zeka aracıyım. İsmim 4 yapraklı yonca “🍀”",
-        "Sevdiklerinden mesajlar ve fotoğraflar var bir kaç kişi daha mesaj ekleyecek lütfen beklemede kal...",
+        "Tekrardan gelmene sevindimm !! Hoş Geldin Esma.",
+        "Ben senin yapay zekan  4 yapraklı yonca “🍀”",
+        "Sevdiklerinden mesajlar ve fotoğraflar var.",
         "Size özel oluşturduğum sayfaya yönlendirmenizi gerçekleştiriyorum...",
         "---"
     ];
